@@ -1,0 +1,33 @@
+﻿@model List<SimpleHotelApp.Models.Guest>
+@{
+    Layout = "_Layout";
+}
+
+<link rel="stylesheet" href="~/css/bootstrap.min.css">
+
+<div class="container mt-4">
+    <h1>Guests</h1>
+    <a class="btn btn-primary mb-3" href="/Guest/Create">Add Guest</a>
+
+    <table class="table table-striped table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var guest in Model)
+            {
+                <tr>
+                    <td>@guest.Id</td>
+                    <td>@guest.Name</td>
+                    <td>@guest.Email</td>
+                    <td>@guest.Phone</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

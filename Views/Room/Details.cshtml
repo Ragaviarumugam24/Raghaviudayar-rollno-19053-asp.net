@@ -1,0 +1,12 @@
+﻿@model SimpleHotelApp.Models.Room
+@{
+    Layout = "_Layout";
+}
+
+
+<h1>Room Details</h1>
+<p>ID: @Model.Id</p>
+<p>Number: @Model.Number</p>
+<p>Type: @Model.Type</p>
+<p>Available: @(Model.IsAvailable ? "Yes" : "No")</p>
+<a href="/Room/Index">Back</a>

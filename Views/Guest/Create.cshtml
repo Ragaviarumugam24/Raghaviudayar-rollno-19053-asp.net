@@ -1,0 +1,27 @@
+﻿@model SimpleHotelApp.Models.Guest
+@{
+    Layout = "_Layout";
+}
+
+<link rel="stylesheet" href="~/css/bootstrap.min.css">
+
+<div class="container mt-4">
+    <h1>Add Guest</h1>
+
+    <form method="post">
+        <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="text" class="form-control" name="Name" required />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-control" name="Email" required />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Phone</label>
+            <input type="text" class="form-control" name="Phone" required />
+        </div>
+        <button type="submit" class="btn btn-success">Add Guest</button>
+        <a class="btn btn-secondary" href="/Guest/Index">Cancel</a>
+    </form>
+</div>

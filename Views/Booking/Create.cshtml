@@ -1,0 +1,40 @@
+﻿@model SimpleHotelApp.Models.Booking
+@{
+    Layout = "_Layout";
+}
+
+@using SimpleHotelApp.Models
+<link rel="stylesheet" href="~/css/bootstrap.min.css">
+
+<div class="container mt-4">
+    <h1>Add Booking</h1>
+
+    <form method="post">
+        <div class="mb-3">
+            <label class="form-label">Room</label>
+            <select class="form-select" name="RoomId" required>
+                <option value="">Select Room</option>
+                @foreach (var room in ViewBag.Rooms as List<Room>)
+                {
+                    <option value="@room.Id">@room.Number - @room.Type</option>
+                }
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Guest</label>
+            <select class="form-select" name="GuestId" required>
+                <option value="">Select Guest</option>
+                @foreach (var guest in ViewBag.Guests as List<Guest>)
+                {
+                    <option value="@guest.Id">@guest.Name</option>
+                }
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Check-In Date</label>
+            <input type="datetime-local" class="form-control" name="CheckIn" required />
+        </div>
+        <button type="submit" class="btn btn-success">Add Booking</button>
+        <a class="btn btn-secondary" href="/Booking/Index">Cancel</a>
+    </form>
+</div>

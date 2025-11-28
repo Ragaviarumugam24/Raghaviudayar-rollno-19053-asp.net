@@ -1,0 +1,28 @@
+﻿@model SimpleHotelApp.Models.Room
+@{
+    Layout = "_Layout";
+}
+
+<link rel="stylesheet" href="~/css/bootstrap.min.css">
+
+<div class="container mt-4">
+    <h1>Edit Room</h1>
+
+    <form method="post">
+        <input type="hidden" name="Id" value="@Model.Id" />
+        <div class="mb-3">
+            <label class="form-label">Room Number</label>
+            <input type="text" class="form-control" name="Number" value="@Model.Number" required />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Room Type</label>
+            <input type="text" class="form-control" name="Type" value="@Model.Type" required />
+        </div>
+        <div class="form-check mb-3">
+            <input type="checkbox" class="form-check-input" name="IsAvailable" @(Model.IsAvailable ? "checked" : "") />
+            <label class="form-check-label">Available</label>
+        </div>
+        <button type="submit" class="btn btn-success">Save</button>
+        <a class="btn btn-secondary" href="/Room/Index">Cancel</a>
+    </form>
+</div>
