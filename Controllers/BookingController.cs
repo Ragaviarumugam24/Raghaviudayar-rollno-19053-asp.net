@@ -2,7 +2,7 @@
 using SimpleHotelApp.Models;
 using SimpleHotelApp.Services;
 
-namespace SimpleHotelApp.Controllers
+using HotelApp.ServicesControllers;
 {
     public class BookingController : Controller
     {
