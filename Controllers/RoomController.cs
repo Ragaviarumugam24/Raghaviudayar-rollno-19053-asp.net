@@ -2,7 +2,7 @@
 using SimpleHotelApp.Models;
 using SimpleHotelApp.Services;
 
-namespace SimpleHotelApp.Controllers
+using HotelApp.Services.Controllers
 {
     public class RoomController : Controller
     {
