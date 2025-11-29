@@ -1,4 +1,4 @@
-﻿namespace SimpleHotelApp.Models
+﻿namespace eHotelApp.Models
 {
     public class Guest
     {
