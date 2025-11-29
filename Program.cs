@@ -1,4 +1,5 @@
-using SimpleHotelApp.Services;
+using HotelApp.Services;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
