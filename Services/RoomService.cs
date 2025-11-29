@@ -1,6 +1,6 @@
-﻿using SimpleHotelApp.Models;
+﻿using HotelApp.Models;
 
-namespace SimpleHotelApp.Services
+namespace HotelApp.Services
 {
     public class RoomService
     {
