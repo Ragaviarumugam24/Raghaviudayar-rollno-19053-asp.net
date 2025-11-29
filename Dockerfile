@@ -1,26 +1,18 @@
 # Build stage
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
-WORKDIR /app
+WORKDIR /src
 
-# Copy everything
-COPY . .
-
-# Restore dependencies
+COPY *.sln .
+COPY HotelApp/*.csproj HotelApp/
 RUN dotnet restore
 
-# Publish the application
-RUN dotnet publish -c Release -o out
+COPY . .
+WORKDIR /src/HotelApp
+RUN dotnet publish -c Release -o /app/publish
 
-# Runtime image
-FROM mcr.microsoft.com/dotnet/aspnet:8.0
+# Run stage
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
 WORKDIR /app
+COPY --from=build /app/publish .
 
-# Copy compiled files
-COPY --from=build /app/out .
-
-# Expose port for Render
-EXPOSE 8080
-ENV ASPNETCORE_URLS=http://+:8080
-
-# Run the application
 ENTRYPOINT ["dotnet", "HotelApp.dll"]
