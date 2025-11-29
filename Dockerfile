@@ -3,16 +3,15 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
 # Copy only project file first
-COPY HotelApp/HotelApp.csproj HotelApp/
+COPY HotelApp.csproj ./
+RUN dotnet restore
 
-RUN dotnet restore HotelApp/HotelApp.csproj
-
-# Copy all files
+# Copy everything
 COPY . .
 
-RUN dotnet publish HotelApp/HotelApp.csproj -c Release -o /app
+RUN dotnet publish -c Release -o /app
 
-# Run stage
+# Runtime stage
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
 WORKDIR /app
 
