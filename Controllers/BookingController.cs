@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using SimpleHotelApp.Models;
-using SimpleHotelApp.Services;
+using HotelApp.Models;
+using HotelApp.Services;
 
 using HotelApp.ServicesControllers;
 {
