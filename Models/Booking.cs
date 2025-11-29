@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SimpleHotelApp.Models
+namespace HotelApp.Models
 {
     public class Booking
     {
